@@ -8,8 +8,6 @@ public class FixDiscountPolicy implements DiscountPolicy {
 
     @Override
     public int discount(Member member, int price) {
-        System.out.print("member.getGrade()===> ");
-        System.out.print(member.getGrade());
         int defaultValue = 0;
         if (member.getGrade() == Grade.VIP) {
             defaultValue = discountFixAmount;
