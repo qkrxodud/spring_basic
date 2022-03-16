@@ -11,21 +11,30 @@ import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+// @Configuration
 public class AppConfig {
+
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
 
     @Bean
     public MemberService memberService() {
+        //1번 호출
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
     public OrderService orderService() {
+        //1번 호출
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
     @Bean
     public MemberRepository memberRepository() {
+        //2번? 3번? 호출
+        System.out.println("call AppConfig.MemberRepository");
         return new MemoryMemberRepository();
     }
 
