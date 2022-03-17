@@ -1,5 +1,11 @@
 package hello.core.member;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Member {
 
     private Long id;
@@ -12,7 +18,7 @@ public class Member {
         this.grade = grade;
     }
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
@@ -34,5 +40,5 @@ public class Member {
 
     public void setGrade(Grade grade) {
         this.grade = grade;
-    }
+    }*/
 }
